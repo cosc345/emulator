@@ -1,0 +1,27 @@
+/*
+This page is for styling the index page (html) for the Emulator
+
+*/
+/* 
+    Created on : Apr 28, 2015, 3:01:17 PM
+    Author     : cnimcharoen
+*/
+body {
+    background-color: #d0e4fe;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+}
+#emulatorCanvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 520px;
+    height: 520px;
+    background-color:  white;
+}
+
