@@ -1,7 +1,7 @@
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+This page is use to load process information from index.html
+It select the right file and load that file on to the canvas in html
  */
+
 
 
