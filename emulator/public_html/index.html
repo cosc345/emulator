@@ -10,14 +10,25 @@ This file is the main file that run the emulator
         <link rel="stylesheet" type="text/css" href="styling.css">
     </head>
     <body>
+        
         <h1> LCC Smartwatch Emulator</h1>
+        
         <canvas id="emulatorCanvas" style="border:1px solid #000000;">
         </canvas>
         
+        <div style="color:white" id='monitor' >
             <select id = "AppSelection"> 
-            <option value="testing">Testing</option>
-            <option value="health">Health App</option>
+                <option value="testing">Testing</option>
+                <option value="health">Health App</option>
             </select>
+            <button type="button" id='load'>Load</button><br>
+            <textarea disabled id='text' rows="4" cols="50"></textarea>
+        </div>
         
+        <script type="text/javascript"
+        src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript" src="emulatorForm.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
     </body>
 </html>
