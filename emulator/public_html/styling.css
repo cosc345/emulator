@@ -20,7 +20,25 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     display: block;
+    background-position-y: 20%;
 }
 #AppSelection{
     font-size: 20px;
+}
+#smartphoneFrame{
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 520px;
+    height: 520px;
+    background-color: black;
+}
+
+#homebutton{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border: 1px solid ;
 }

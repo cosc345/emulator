@@ -12,11 +12,14 @@ This file is the main file that run the emulator
     <body>
 
         <h1> LCC Smartwatch Emulator</h1>
+        <div style="color:black" id="smartphoneFrame">
+            <br><br><br>
+            <canvas id="emulatorCanvas" width="400" height="400"
+                    style="background-color:#333">
 
-        <canvas id="emulatorCanvas" width="400" height="400"
-                style="background-color:#333">
-        </canvas>
-
+            </canvas><br>
+                <button type="button" id='homebutton'></button>
+        </div>
         <div style="color:white" id='monitor' >
             <select id = "AppSelection"> 
                 <option value="Test.js">Testing</option>
@@ -33,7 +36,7 @@ This file is the main file that run the emulator
         <script type="text/javascript" src="emulatorForm.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <script>
-       // this is for the clear button, clearing the canvans
+            // this is for the clear button, clearing the canvans
             var canvas = document.getElementById("emulatorCanvas");
             var ctx = canvas.getContext("2d");
             document.getElementById('clear').addEventListener('click', function () {
