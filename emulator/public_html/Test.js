@@ -8,6 +8,7 @@ $(document).ready(function () {
         var text = "Starting the test.";
         var textarea = document.getElementById("text");
         $(textarea).val(text);
+        console.log(text);
         var canvas = document.getElementById("emulatorCanvas");
         var ctx = canvas.getContext("2d");
         var imageObj = new Image();

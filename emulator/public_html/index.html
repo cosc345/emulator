@@ -10,26 +10,39 @@ This file is the main file that run the emulator
         <link rel="stylesheet" type="text/css" href="styling.css">
     </head>
     <body>
-        
+
         <h1> LCC Smartwatch Emulator</h1>
-        
-        <canvas id="emulatorCanvas" style="border:1px solid #000000;">
-            Your browser does not support the HTML5 canvas tag.
+
+        <canvas id="emulatorCanvas" width="400" height="400"
+                style="background-color:#333">
         </canvas>
-        
+
         <div style="color:white" id='monitor' >
             <select id = "AppSelection"> 
                 <option value="Test.js">Testing</option>
                 <option value="health.js">Health App</option>
+                <option value="clock.js">clock</option>
             </select>
-            <button type="button" id='load'>Load</button><br>
+            <button type="button" id='load'>Load</button>
+            <input type="button" id="clear" value="Clear"><br>
             <textarea disabled id='text' rows="4" cols="50"></textarea>
         </div>
-        
+
         <script type="text/javascript"
         src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script type="text/javascript" src="emulatorForm.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script>
+       // this is for the clear button, clearing the canvans
+            var canvas = document.getElementById("emulatorCanvas");
+            var ctx = canvas.getContext("2d");
+            document.getElementById('clear').addEventListener('click', function () {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.restore();
+                location.reload();
+            }, false);
+        </script>
+
 
     </body>
 </html>
