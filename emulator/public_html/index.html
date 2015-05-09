@@ -12,21 +12,59 @@ This file is the main file that run the emulator
     <body>
 
         <h1> LCC Smartwatch Emulator</h1>
-        <div style="color:black" id="smartphoneFrame">
-            <br><br><br>
-            <canvas id="emulatorCanvas" width="400" height="400"
-                    style="background-color:#333">
+        <div style="color:black" id="smartphoneFrame5">
+            <canvas id="emulatorCanvas" width="0" height="0"
+                    style="background-color:#d0e4fe">
 
             </canvas><br>
-            <button type="button" id='homebutton'></button>
+             <div  id="smartphoneFrame"><br><br><br>
+            <div  id="container"></div>
+            </div>
+            <script src="kinetic-v5.1.0 2/kinetic-v5.1.0.min.js"></script>
+            <script defer="defer">
+                //modified version of this  http://www.html5canvastutorials.com/kineticjs/html5-canvas-kineticjs-kaleidoscope-tutorial/
+             var cleared = false;
+              var imageObj = new Image();
+              var layer = new Kinetic.Layer();
+              var stage = new Kinetic.Stage({
+                  container: 'container',
+                  width: 400,
+                  height: 400
+                });
+              imageObj.onload = function() {              
+                darth = new Kinetic.Image({
+                  x: 10,
+                  y: 10,
+                  image: imageObj,
+                  draggable: true,
+                  blurRadius: 20
+                });
+               if(!cleared){
+                   layer.clear();
+                   cleared = true;
+               }else{
+                   layer.draw();
+                   cleared = false;
+               }
+      
+                layer.add(darth);
+                stage.add(layer);
+
+                darth.cache();
+                darth.filters([Kinetic.Filters.Kaleidoscope]);
+                darth.kaleidoscopePower(3);
+        
+              };
+              imageObj.src = 'https://www.wonderplugin.com/wp-content/plugins/wonderplugin-lightbox/images/demo-image2.jpg';
+            </script>
+            
         <div style="color:white" id='monitor' >
             <select id = "AppSelection"> 
                 <option value="Test.js">Testing</option>
                 <option value="HealthApp/health.js">Health App</option>
-                <option value="clock.js">clock</option>
             </select>
             <button type="button" id='load'>Load</button>
-            <input type="button" id="clear" value="Clear"><br>
+            <button type="button" id='clear'>clear</button><br>
             <textarea disabled id='text' rows="4" cols="50"></textarea>
         </div>
 
@@ -36,15 +74,13 @@ This file is the main file that run the emulator
         <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
         <script>
             // this is for the clear button, clearing the canvans
-            var canvas = document.getElementById("emulatorCanvas");
-            var ctx = canvas.getContext("2d");
             document.getElementById('clear').addEventListener('click', function () {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.restore();
-                location.reload();
+                layer.clear();
+                location.reload(); 
             }, false);
         </script>
-
+        
+       
 
     </body>
 </html>

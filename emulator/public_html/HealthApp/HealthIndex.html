@@ -25,10 +25,11 @@ This file is the main file that run the emulator
                 <option value="health.js">Health App</option>
                 <option value="../clock.js">clock</option>
             </select>
-            <button type="button" id='load'>Load</button>
-            <input type="button" id="clear" value="Clear"><br>
+            <button type="button" id='load'>Load</button><br>
             <textarea disabled id='text' rows="4" cols="50"></textarea>
         </div>
+           <img src="._smartwatch.jpg" alt="stuffs" style="width:304px;height:228px">
+ 
 
         <script type="text/javascript"
         src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -38,7 +39,7 @@ This file is the main file that run the emulator
             // this is for the clear button, clearing the canvans
             var canvas = document.getElementById("emulatorCanvas");
             var ctx = canvas.getContext("2d");
-            document.getElementById('clear').addEventListener('click', function () {
+            document.getElementById('homebutton').addEventListener('click', function () {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.restore();
                 location.reload();
