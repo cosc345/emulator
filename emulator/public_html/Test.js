@@ -12,7 +12,7 @@ $(document).ready(function () {
         var canvas = document.getElementById("emulatorCanvas");
         var ctx = canvas.getContext("2d");
         var imageObj = new Image();
-        imageObj.src = "http://msktodd.weebly.com/uploads/2/2/3/6/2236149/19608_orig.gif";
+        imageObj.src = "loading.png";
     
 
       imageObj.onload = function() {

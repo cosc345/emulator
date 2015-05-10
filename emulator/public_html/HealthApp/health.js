@@ -11,7 +11,7 @@ $(document).ready(function () {
         var canvas = document.getElementById("emulatorCanvas");
         var ctx = canvas.getContext("2d");
         var imageObj = new Image();
-        imageObj.src = "smartwatch.jpg";
+        imageObj.src = "LCC.png";
     
 
       imageObj.onload = function() {

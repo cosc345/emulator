@@ -1,51 +1,20 @@
 <!DOCTYPE html>
-<!--
-This file is the main file that run the emulator
--->
 <html>
-    <head>
-        <title>Emulator</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="../CSS/styling.css">
-    </head>
-    <body>
+<body>
 
-        <h1> LCC Smartwatch Emulator</h1>
-        <div style="color:black" id="smartphoneFrame">
-            <br><br><br>
-            <canvas id="emulatorCanvas" width="400" height="400"
-                    style="background-color:#333">
+<p>Click on the button below. The input field will tell you when two, four, and six seconds have passed.</p>
 
-            </canvas><br>
-            <button type="button" id='homebutton'></button>
-        <div style="color:white" id='monitor' >
-            <select id = "AppSelection"> 
-                <option value="../Test.js">Testing</option>
-                <option value="health.js">Health App</option>
-                <option value="../clock.js">clock</option>
-            </select>
-            <button type="button" id='load'>Load</button><br>
-            <textarea disabled id='text' rows="4" cols="50"></textarea>
-        </div>
-           <img src="._smartwatch.jpg" alt="stuffs" style="width:304px;height:228px">
- 
+<button onclick="timedText()">Display timed text</button>
+<input type="text" id="txt">
 
-        <script type="text/javascript"
-        src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script type="text/javascript" src="../emulatorForm.js"></script>
-        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-        <script>
-            // this is for the clear button, clearing the canvans
-            var canvas = document.getElementById("emulatorCanvas");
-            var ctx = canvas.getContext("2d");
-            document.getElementById('homebutton').addEventListener('click', function () {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                ctx.restore();
-                location.reload();
-            }, false);
-        </script>
+<script>
+function timedText() {
+    var x = document.getElementById("txt");
+    setTimeout(function(){ x.value="2 seconds" }, 2000);
+    setTimeout(function(){ x.value="4 seconds" }, 4000);
+    setTimeout(function(){ x.value="6 seconds" }, 6000);
+}
+</script>
 
-
-    </body>
+</body>
 </html>
