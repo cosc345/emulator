@@ -1,43 +1,62 @@
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ *This simulate the heartrate
  */
+var canvas = document.getElementById('emulatorCanvas');
+var textarea = document.getElementById("text");
+var x;
 
 $(document).ready(function () {
-    var x = getRandomInt(60, 99);
-    max = 100;
-    // this code is from paperjs website
-    var canvas = document.getElementById('emulatorCanvas');
-    // Create an empty project and a view for the canvas:
     paper.setup(canvas);
+
     // Create a Paper.js Path to draw a line into it:
-    var path = new paper.Path();
-    // Give the stroke a color
-    path.strokeColor = 'black';
-    var start = new paper.Point(100, 100);
-    // Move to start and draw a line from there
-    path.moveTo(start);
-    // Note that the plus operator on Point objects does not work
-    // in JavaScript. Instead, we need to call the add() function:
-    path.lineTo(start.add([200, -50]));
-    // Draw the view now:
-    paper.view.draw();
-
-
+    var text = "Displaying heartrate.";
+    $(textarea).val(text);
+    console.log(text);
+    x = getRandomInt(50, 99);
     function incrementCounter() {
-        ctr.innerHTML = x;
-        x = getRandomInt(60, 99);
-        if (x < max)
+        $(textarea).val(x);
+        if (chance() === 0) {
+            x = getRandomInt(50, 99);
+            console.log("Heartrate is between 50 to 100");
             setTimeout(incrementCounter, 1500);
+        } else {
+            console.log("Heartrate is beyone 50 or 100");
+            x = getRandomInt(1, 200);
 
+
+            if (x < 50) {
+                x = getRandomInt(1, 50);
+                setInterval(function () {
+                    $(textarea).val(x + " is a dangerous heartbeat, call 111 immediately");
+                }, 1500);
+
+            } else {
+                if (x > 100) {
+                    x = getRandomInt(100, 200);
+                    setInterval(function () {
+                        $(textarea).val(x + " is a dangerous heartbeat, call 111 immediately");
+                    }, 1500);
+
+                }
+            }
+        }
     }
 
+    
     incrementCounter();
+    function chance() {
+    xchance = (Math.random() < 0.99 ? 0 : 1);
+    console.log("chance is " + xchance);
+    return xchance;
+}
+
+
 });
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+function onResize(event) {
+    // Whenever the window is resized, recenter the path:
+    path.position = view.center;
+};
+

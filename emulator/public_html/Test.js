@@ -1,5 +1,5 @@
 /* 
-Just testing the emulator
+Just testing the emulator to see if the image loaded or not
  */
 
 

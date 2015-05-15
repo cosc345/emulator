@@ -4,8 +4,8 @@
  */
 
 
-var currentApp;
-var lastApp;
+var currentApp; //current app that is running
+var lastApp; //the last app that was runhing lastApp = current app 
 
 $('#load').on('click', function () {
     //if the "load" button is click then display app's text and load the app on 
@@ -22,12 +22,14 @@ $('#load').on('click', function () {
     RunningTheApp(file);
 
 });
+//This function use to clear canvas for the next application 
 function clear() {
     var canvas = document.getElementById("emulatorCanvas");
     var ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.restore();
 }
+//Use this to load file to the emulator
 function RunningTheApp(file) {
     
     if (lastApp != null) {
@@ -44,6 +46,7 @@ function RunningTheApp(file) {
     });
     console.log("fetched program");
 }
+//This is the AppOb containing application object
 function AppOb() {
 
 
