@@ -12,7 +12,7 @@ $(document).ready(function () {
     var ctx = canvas.getContext("2d");
     var imageObj = new Image();
     imageObj.src = "HealthApp/create_thumb.png"; // this is the logo 
-    setTimeout(function(){  RunningTheApp("HealthApp/HeartRateSim.js") }, 3000); //go another file
+    setTimeout(function(){  RunningTheApp("HealthApp/heathTest.js") }, 3000); //go another file
 
 
 //Loading image to the emulator
