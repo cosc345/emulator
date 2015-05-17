@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+Emulator manual
+-->
+<html>
+    <head>
+        <title>Emulator Document</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="CSS/typography.css">
+         <link rel="stylesheet" type="text/css" href="CSS/grid.css">
+    </head>
+    <body>
+        <div class="container">
+        <h1> Emulator Manual</h1>
+        <hr>
+        <p>
+            <b>Authors</b><br>
+            Chontira Nimcharoen<br>
+            Linlin Wang<br>
+            Cameron Wilkinson 
+        </p>
+        <div class="span-15 prepend-1 colborder">
+        <h2>Emulator Description</h2>
+        <p>The emulator is use to emulate a very simple smart watch.
+            It does have any sophisticated features of a real smart watch and does not mean to emulate a smart watch of any kind.
+            It only purpose is to run a simple prototype health application.
+            The emulator contain a basic canvas element and a smart watch image background.
+            It contain a simple load and clear buttons for loading and clearing apps.
+            It also contain a monitor, which is use to interpret the effects and problems of the app.
+        
+
+        </p>
+        </div>
+        <h3>Features</h3>
+        <p>Size: 300 x 300<br>
+            Languages used: JavaScript and HTML5<br>
+            Other essential packages: jQuery version 1.11 from Google's Ajax library<br>
+        </p>
+        
+        <div class="span-15 prepend-1 colborder">
+        <h2>Emulator Installation</h2>
+        <p>You can download our emulator from github: <a href="https://github.com/cosc345/emulator">Download</a></p>
+        <h3>Navigation</h3>
+        <p>1. To navigate and run the emulator, click the emulator file.<br>
+            2. Click on public_html file.<br>
+            3. Then click setup.html
+        </p>
+        <h3>Running the emulator</h3>
+        <p>To be able to run the emulator, just click the setup.html file<br>
+            But first you need to install a server using python and here's how
+        </p>
+        <h3>Server Installation</h3>
+        <p>1. If you don't have python installed. Download the latest version of python<br>
+            2. Under command line environment, navigate to the file that has the setup.html in it.<br>
+            3. Type in this command -m SimpleHTTPServer 8080.</p>
+
+        <h2>Running the Application</h2>
+        <h3>For users</h3>
+        <p>For the most part it is difficult to install a new app without prior experience with HTML and javascript.<br>
+            But for the pre-installed apps, you can select any app from the selection tray and click load<br>
+            To clear app, click clear
+        </p>
+        <h3>For Developers</h3>
+        <p>For running the pre-installed apps, the instruction is much the same as the users instruction.<br>
+            For new apps, follow this instruction closely.<br><br>
+            1. The app must be in Javascript.<br>
+            2. You can put the app file anywhere you like. But it must be within the public.html file.<br>
+            3. Use the path for the application to run the app.<br>
+            4. Add your application path finder with the selection tray of the setup.html.<br>
+            5. The value attribute of the app's selection must be your source path. For example HealthApp/health.js.
+
+
+        </p>
+        <h3>To Run the application</h3>
+        <p>The canvas name is 'emulatorCanvas'.<br>
+            Use the runningScript(file) method under emulatorForm.js to run the app.<br>
+
+        </p>
+        <h2>Bugs</h2>
+        <p> When click clear, the application does not clear properly sometimes</p>
+        </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+
+       <!--
+This file is the main file that run the emulator
+-->
+<html>
+    <head>
+        <title>Emulator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="CSS/styling.css">
+        <script type="text/javascript" src="paperjs-v0.9.22/dist/paper-full.min.js"></script>
+<!-- Define inlined JavaScript -->
+    </head>
+    <body>
+
+        <h1 id="title1" class="gwd-h1-l9vh gwd-h1-k5vu">
+            LCC Smartwatch Emulator
+        </h1>
+        <img class="gwd-img-8g82" id="smartwatch" src="watch-6.png">
+        <canvas width="207" height="210" class="gwd-canvas-ot0t" id="emulatorCanvas"></canvas>
+
+        <div style="color:white" id='monitor' >
+            <select id = "AppSelection"> 
+                <option value="Test.js">Testing</option>
+                <option value="HealthApp/health.js">Health App</option>
+                <option value="clock.js">clock</option>
+            </select>
+            <button type="button" id='load'>Load</button>
+            <input type="button" id="clear" value="Clear"><br>
+            <textarea disabled id='text' rows="4" cols="50"></textarea>
+        </div>
+        <div id="heartrate"></div>
+
+        <script type="text/javascript"
+        src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript" src="emulatorForm.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script>
+            // this is for the clear button, clearing the canvans
+            var canvas = document.getElementById("emulatorCanvas");
+            var ctx = canvas.getContext("2d");
+            document.getElementById('clear').addEventListener('click', function () {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.restore();
+                location.reload();
+            }, false);
+        </script>
+
+
+    </body>
+</html>
