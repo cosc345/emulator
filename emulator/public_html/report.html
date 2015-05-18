@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+This is the report
+-->
+<html>
+    <head>
+        <title>Report</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="CSS/typography.css">
+        <link rel="stylesheet" type="text/css" href="CSS/grid.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class='span-15 prepend-1 colborder'>
+                <h1>COSC345 Assignment 2: Draft System – Report</h1>
+                <hr>
+
+                <h2>Reflection on Experience</h2>
+
+                <p>The experience of creating the draft system for our health app has been very enlightening. We encountered many challenges that were not previously foreseen, such as schedule conflicts and technical difficulties. <br><br>
+
+                    Firstly we had the challenge of scheduling group meetings where everyone could be present. More often than not, we had members who were absent due to commitments to other courses, work or health issues. Consequently, we used text messaging, social media and GitHub as a solution to our communication problems. Whilst this solution was mostly effective, there were times where we found that slow responses or a lack of response, delayed the decision-making process.<br><br>
+
+                    Furthermore, we also had scheduling conflicts with assessments from other courses. The plan that we originally drafted did not account for the time we would need to prepare for our other assessments and as a result, we ended up over-estimating the amount of time we had on hand to learn our programming languages and create this draft system. This also means that we were unable to keep to the roles that we originally had planned for each member, as other members picked up the slack when each member was busy with other commitments. As a result we could only complete the heart rate monitor for testing and the clock, GPS locator, mock collection/database and medicine notification remain unfinished. <br><br>
+
+                    Another challenge faced by our group was our weak technical background. Every member in our group is inexperienced with JavaScript and had little to no prior experience with HTML5. While we initially anticipated this problem and hence designated time to learning both programming languages, our inexperience meant that we spent a lot more time researching for solutions than we had previously planned for. Some of the technical difficulties that we were unable to solve for the draft system include:<br><br>
+                </p>
+                <li>Testing with QUnit – we came to the realization after finishing the code for the draft system that we will need to alter the coding for the emulator in order to be able to test using QUnit.</li>
+                <li>Interface – this will require more polishing, as at the moment it is just a logo that is then followed by plain text that says ‘heart rate’ and ‘heart’. We plan on making this more aesthetically pleasing in the next assignment.</li>
+                <li>Heart rate monitor of our app – currently, the canvas will not clear and update to show the new heart rate. As a result, we need to re-run the script in order to create a new app object for that script so that the screen can continuously update with the new heart rate. Our planned improvement for this problem is to use a method that will not require the re-running of the script.</li>
+
+                <h2>Changes Made</h2>
+
+                <p>The biggest change we made when creating this draft system is changing our choice of IDE. Originally, we had planned to use Eclipse as our members were more familiar with it but when we started programming our app, we quickly realized the limitations in using Eclipse. As a result, we decided to change to using NetBeans.  NetBeans made pushing and pulling from GitHub a lot more efficient as well as offering the advantageous features provided by Eclipse.<br><br>
+
+                    Due to the limited amount of the app that we have finished for testing, we have yet to make any other changes to our original plan of what features we want in our app. However we do anticipate that we will be making a lot of changes to our draft system, such as those mentioned above, as we work towards the finished system.</p>
+
+                <h2>Testing</h2>
+
+                <p>The main method of testing we used for our draft system is console.log. We created a random number generator that is used to imitate the heartbeat and we used console.log to print out messages such as “….dangerous heartbeat, call 111 immediately”, when an extreme heart rate value was reached. <br><br>
+
+                    After the lecture on QUnit, we attempted to create test files using QUnit. However as stated above, because of the approach that we have taken to code the emulator, QUnit testing currently creates problems for us. As a result, we plan on altering our emulator in order to allow for QUnit testing.</p>
+
+                <h2>Revised Plan</h2>
+
+                <table border="1" style="width:100%">
+                    <tr>
+                        <td>Time</td>
+                        <td>Plan of Action</td>		
+                    </tr>
+                    <tr>
+                        <td>18 May 2015</td>
+                        <td>Submit Assignment 2: Draft System</td>		
+                    </tr>
+                    <tr>
+                        <td>19 May 2015 – 17 June 2015</td>
+                        <td>
+                            Prepare for Final Exams for other courses.
+                        </td>		
+                    </tr>
+                    <tr>
+                        <td>18 June 2015 to 5 July 2015</td>
+                        <td>Begin working towards Finished System:<br>
+                    <li><b>Chontira</b><br>
+                        Create draft system of mock up collection for medicine notification part of the app.<br>
+                        Document process for report.</li>
+                    <li><b>Cameron</b><br>
+                        Complete draft system of heart rate monitor and ensure that it sends a text message with coordinates of location or calls emergency contact (e.g. 111) when heart goes below/above threshold.<br>
+                        Document process for report.</li>
+                    <li><b>Linlin</b><br>
+                        Complete draft system of clock, GPS locator. <br>
+                        Link clock to medicine notification. <br>
+                        Polish the interface of the app so that the changing heart rate is showing on the watch and make the interface more aesthetically appealing.<br>
+                        Document process for report.</li></td>
+                    <tr>
+                        <td>6 July 2015 – 20 July 2015</td>
+                        <td><li><b>Chontira</b><br>
+                        Create test files for medicine notifications.<br>
+                        Test medicine notifications part of the app.<br>
+                        Record changes and process for report.</li>
+                    <li><b>Cameron</b><br>
+                        Create test files for heart rate monitor.<br>
+                        Test heart rate monitor to ensure it is picking up on heartbeats above/below the thresholds and that is sends text messages with location coordinates or calls an emergency contact (e.g. 111).<br>
+                        Record changes/process.<br>
+                    <li><b>Linlin</b><br>
+                        Create test files for Chontira and Cameron.<br>
+                        Help test their parts of the app.<br>
+                        Finish up interface to ensure that it accommodates for any changes made by Chontira and Cameron.<br>
+                        Begin writing report.</li>
+                    </td>		
+                    </tr>
+                    <tr>
+                        <td>21 July 2015 – End of Week 6 (tentative date)</td>
+                        <td><b>Chontira, Cameron, Linlin</b><br>
+                            Come together to integrate the different parts of the app to ensure that it is working smoothly for the finished system.<br>
+                            Discuss and attempt at any other features if there is time to do so.<br>
+                            Complete report for submission.
+
+                        </td>		
+                    </tr>
+                    <tr>
+                        <td>
+                            Week 7 – Week 12 (tentative date)
+                        </td>
+                        <td>Due: Assignment 4 - Porting<br>
+
+                            The roles and our approach have yet to be discussed.</td>		
+                    </tr>
+                </table>
+
+                <hr>
+
+
+
+                <h2>Evaluation</h2>
+
+                <p>Overall we feel like we have made a pretty good attempt at the draft system, especially considering our circumstances with mid-terms and assessments in our other courses, as well as our inability to meet together as a whole group more than once during this period. We have definitely learnt that we over-estimated our abilities to solve unforeseen technical difficulties as well as the amount of time we had on hand to program this draft system. There is also a lot more to improve on, in terms of communication between members to ensure more efficient cooperation and decision-making and also following the plan that we create. We hope to take what we having learned from assignment 2 to improve the quality of our finished system.</p>
+            </div></div>
+    </body>
+</html>
