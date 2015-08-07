@@ -20,7 +20,23 @@ $(document).ready(function () {
         //  setInterval(heartRateGen, 1500);
 
     }                   
-var Medicine = [{
+
+    var medication = {
+        medicine: []
+    };
+    
+    for(var i in med) {
+        var item = med[i];
+        
+        medication.medicine.push({
+            "name":item.name,
+            "dosage":item.dosage,
+            "practice":item.practice
+        });
+    }
+    
+    /*
+    var Medicine = [{
     "name":"Levothyroxine",
     "dosage":"150mg daily",
     "practice":"Churton Park Medical Centre"
@@ -35,6 +51,7 @@ var Medicine = [{
     "dosage":"10ml every 4 hours as needed",
     "practice":"Countdown"
 }];
+    */
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
