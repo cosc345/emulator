@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Test for Notification App</h2>
+
+<p id="demo"></p>
+
+<p>Click "Start Timer". Wait 3 seconds. Your page will alert "Take your meds".</p>
+<p>When you close the alert box, an new alert box will appear in 3 seconds.</p>
+<p>This will go on forever until you click the stop timer button.</p>
+ 
+<button onclick="setInterval(function(){alert(meds)},3000);">Try it</button>
+<button onclick="clearInterval(clock)">Stop clock</button>
+
+<script>
+    var clock = setInterval(function(){myTimer()},1000);
+    
+    function myTimer(){
+        var d = new Date();
+        document.getElementById("demo").innerHTML=d.toLocaleTimeString();
+    }
+</script>
+
+
+<script>
+    var medication = {
+        medicine: []
+    };
+    function meds(){
+    for(var i in med) {
+        var item = med[i];
+        
+        medication.medicine.push({
+            "name":item.name,
+            "dosage":item.dosage,
+            "practice":item.practice
+        });
+    }
+    }
+</script>
+
+<!--
+<script>
+    
+    var text = '{"employees":[' +
+'{"firstName":"John","lastName":"Doe" },' +
+'{"firstName":"Anna","lastName":"Smith" },' +
+'{"firstName":"Peter","lastName":"Jones" }]}';
+    
+var text = '{"medicine":[' +
+ '{"name":"Levothyroxine",
+     "dosage":"150mg daily",
+     "practice":"Churton Park Medical Centre"}',
+ '{"name":"Panadol",
+     "dosage":"2 tablets every 4-6 hours as needed",
+     "practice":"Medical Centre"}',
+ '{"name":"Codral",
+     "dosage":"10ml every 4 hours as needed",
+     "practice":"Countdown"}',
+ '{"name":"Carbomizole",
+     "dosage":"12 x 10mg tablets daily",
+     "practice":"Johnsonville Medical Centre"}'
+]}';
+
+var obj = JSON.parse(text);
+
+document.getElementById("demo").innerHTML =
+obj.medicine[1].name + "<br>" +
+obj.medicine[1].dosage + "<br>" +
+obj.medicine[1].practice;
+</script>
+-->
+</body>
+</html>
