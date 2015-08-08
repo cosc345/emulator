@@ -24,7 +24,7 @@ $(document).ready(function () {
 
     }
     //Generate heart rate at random using the chance() 
-//if the generator show somethind greater than 120 or less than 50. It will warned you to call 111
+//if the generator show something greater than 120 or less than 50. It will warned you to call 111
     function heartRateGen(x) {
         //ctx.fillText(x+"", 10, 50);
         //ctx.font = "20px Georgia";
