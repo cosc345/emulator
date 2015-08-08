@@ -4,54 +4,55 @@
  * and open the template in the editor.
  */
 $(document).ready(function () {
-    var canvas = document.getElementById('emulatorCanvas');
-    var ctx = canvas.getContext("2d");
-   var textarea = document.getElementById("text");
-     
-    var x;
-    setInterval(draw, 1500);
-    function draw(){
-        drawHeartRate(ctx, x);
+
+    var message = "Loading the medicine notification";
+    $('#text').val(message);
+    console.log(message);
+    //digital clock from http://www.anthoniraj.com/digital-clock-using-html5-canvas-and-javascript-js/
+    var context;
+    var d;
+    var str;
+    function getClock()
+    {
+
+        //Get Current Time
+        d = new Date();
+        str = prefixZero(d.getHours(), d.getMinutes(), d.getSeconds());
+
+        //Get the Context 2D or 3D
+        var canvas = document.getElementById("emulatorCanvas");
+        var context = canvas.getContext("2d");
+
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.font = "35px Arial";
+        context.fillStyle = "green";
+        context.fillText(str, 35, 90);
+
     }
-    function drawHeartRate(ctx, x) {
-        console.log("drawHeart is working");
-        x = heartRateGen(x);
-        ctx.fillStyle = "white";
-        ctx.fill();
-        ctx.font = "20px Georgia";
-        ctx.fillText("Heart Rate", 57, 50);
-        ctx.font = "50x Georgia";
-        ctx.fillText(x.toString(), 85, 100);
-        //  setInterval(heartRateGen, 1500);
 
-    }                   
-var Medicine = [{
-	"name" : "insulin",
-	"dosage" : "1",
-        "total_dosage" : "20",
-        "time": "",
-	"Direction" : "1 injection after meal."
-},
-{
-        "name" : "Metformin",
-	"dosage" : "2",
-        "total_dosage" : "20",
-        "time": "",
-	"direction" : "2 tablets after meal, 3 times a day."
-    }];
-//var Medicine = {
-//    drugs: []
-//};
+    function prefixZero(hour, min, sec)
+    {
+        var curTime;
+        if (hour < 10)
+            curTime = "0" + hour.toString();
+        else
+            curTime = hour.toString();
 
-//for (var i in someData) {
-//
-//    var item = someData[i];
-//
-//    Medicine.drugs.push({
-//        "name": item.name,
-//        "dosage": item.dosage,
-//        "total_dosage": item.total_dosage,
-//        "time": item.time,
-//        "direction": item.direction
-//    });
-//}
+        if (min < 10)
+            curTime += ":0" + min.toString();
+        else
+            curTime += ":" + min.toString();
+
+        if (sec < 10)
+            curTime += ":0" + sec.toString();
+        else
+            curTime += ":" + sec.toString();
+        return curTime;
+    }
+
+    setInterval(getClock, 1000);
+    setInterval(function(){alert("Take Medicine")},5000);
+
+});
+
+    
