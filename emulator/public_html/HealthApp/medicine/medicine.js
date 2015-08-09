@@ -3,11 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+var output;
+
 $(document).ready(function () {
 
     var message = "Loading the medicine notification";
     $('#text').val(message);
     console.log(message);
+    $.getJSON('data.json', function (data) {
+        output = "<ul>";
+        for (var i in data.users) {
+            output += "<li>" + data.users[i].name + "</br>" + data.users[i].dosage + "</br>" + data.users[i].practice + "</li>";
+        }
+        console.log(output)
+        output += "</ul>";
+
+
+    });
+    
+    setInterval(function () {
+        alert(output)
+    }, 5000);
 
     //digital clock from http://www.anthoniraj.com/digital-clock-using-html5-canvas-and-javascript-js/
     var context;
@@ -55,12 +71,3 @@ $(document).ready(function () {
 
 });
 
-$.getJSON('data.json', function(data){
-    var output="<ul>";
-    for (var i in data.users){
-        output+="<li>" + data.users[i].name + "</br>" + data.users[i].dosage + "</br>" + data.users[i].practice+"</li>";
-    }
-    output+="</ul>";
-    
-    setInterval(function(){alert(data)},5000);
-});
