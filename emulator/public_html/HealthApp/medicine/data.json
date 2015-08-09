@@ -1,0 +1,22 @@
+{"users":[
+        {
+            "name":"Levothyroxine",
+            "dosage":"150mg daily",
+            "practice":"Churton Park Medical Centre"
+        },
+        {
+            "name":"Panadol",
+            "dosage":"2 tablets every 4-6 hours as needed",
+            "practice":"Medical Centre"
+        },
+        {
+            "name":"Codral",
+            "dosage":"10ml every 4 hours as needed",
+            "practice":"Countdown"
+        },
+        {
+            "name":"Carbomizole",
+            "dosage":"12 x 10mg tablets daily",
+            "practice":"Johnsonville Medical Centre"
+        }
+]}
