@@ -3,30 +3,39 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var output;
+
 
 $(document).ready(function () {
 
     var message = "Loading the medicine notification";
     $('#text').val(message);
     console.log(message);
-    $.getJSON('data.json', function (data) {
-        console.log("reading json")
-        output = "<ul>";
-        for (var i in data.users) {
-            output += "<li>" + data.users[i].name + "</br>" + data.users[i].dosage + "</br>" + data.users[i].practice + "</li>";
-        }
-        console.log(output)
-        output += "</ul>";
-
-
-    });
     
-    setInterval(function () {
-        alert(output)
-    }, 5000);
+//    output = getJson(output);
+//    var users =[
+//        {
+//            "name":"Levothyroxine",
+//            "dosage":"150mg daily",
+//            "practice":"Churton Park Medical Centre"
+//        },
+//        {
+//            "name":"Panadol",
+//            "dosage":"2 tablets every 4-6 hours as needed",
+//            "practice":"Medical Centre"
+//        },
+//        {
+//            "name":"Codral",
+//            "dosage":"10ml every 4 hours as needed",
+//            "practice":"Countdown"
+//        },
+//        {
+//            "name":"Carbomizole",
+//            "dosage":"12 x 10mg tablets daily",
+//            "practice":"Johnsonville Medical Centre"
+//        
+//        }];
 
-    //digital clock from http://www.anthoniraj.com/digital-clock-using-html5-canvas-and-javascript-js/
+ 
     var context;
     var d;
     var str;
@@ -69,6 +78,25 @@ $(document).ready(function () {
     }
     
     setInterval(getClock, 1000);
+    // $.getJSON('data.json', function (data) {
+//   function getJson(output1){
+////        var mydata = JSON.parse(data);
+////        console.log("reading json")
+//        output1 = + users[0].name + "</br>" + users[0].dosage + "</br>" + users[0].practice;
+//        
+//        return output1;
+//        
+//    }
+     setInterval(function () {
+        alert("Take 2 tablets of Codral right now")
+    }, 5000);
+     
+
+    //});
+    
+    
+
+    //digital clock from http://www.anthoniraj.com/digital-clock-using-html5-canvas-and-javascript-js/
 
 });
 
