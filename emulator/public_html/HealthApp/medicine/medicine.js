@@ -11,6 +11,7 @@ $(document).ready(function () {
     $('#text').val(message);
     console.log(message);
     $.getJSON('data.json', function (data) {
+        console.log("reading json")
         output = "<ul>";
         for (var i in data.users) {
             output += "<li>" + data.users[i].name + "</br>" + data.users[i].dosage + "</br>" + data.users[i].practice + "</li>";
